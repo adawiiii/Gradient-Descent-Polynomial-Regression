@@ -1,2 +1,9 @@
 .python-version
-\npolyreg
+.vscode/
+
+# Python virtual environment (root-level venv)
+/Include/
+/Lib/
+/Scripts/
+/share/
+/pyvenv.cfg
