@@ -88,7 +88,7 @@ theta1_hist = []
 theta0_hist = []
 avg_loss_hist = []
 
-while (np.any(abs(recent_grad) > 1e-9)):
+while (np.any(abs(recent_grad) > 1e-2)):
     avg_loss_hist.append(forward_prop()/21)
     theta3_hist.append(coefficients[0])
     theta2_hist.append(coefficients[1])

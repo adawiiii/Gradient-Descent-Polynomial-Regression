@@ -107,7 +107,7 @@ for i in range(powers_of_10+1):
     gd_time_end = time.perf_counter()
     epoch_hist.append(epoch_count)
     time_hist.append(gd_time_end-gd_time_start)
-    r2_hist.append(r2_score_np(np.array([point[1] for point in points]), np.array([coef_poly(coefficients, point[0]) for point in points])))
+    r2_hist.append(float(r2_score_np(np.array([point[1] for point in points]), np.array([coef_poly(coefficients, point[0]) for point in points]))))
 print("Benchmark done")
 
 # iters = np.arange(powers_of_10+1)
@@ -122,10 +122,12 @@ plt.ylabel(r'Tims (s) / Average Loss / $R^2$')
 plt.subplot(2, 1, 2)
 plt.plot(iters, epoch_hist, label=r'$I$')
 
+print(r2_hist)
+
 plt.xscale('log')
 plt.xlabel("Threshold")
 plt.ylabel("Iterations")
 # plt.title("Iterations against Thershold")
 plt.legend()
-plt.savefig("time_comp3")
+plt.savefig("time_comp4")
 plt.show()
